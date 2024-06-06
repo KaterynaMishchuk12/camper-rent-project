@@ -7,7 +7,7 @@ const Welcome = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/catalogue');
+    navigate('/catalog');
   };
   return (
     <div className={s.wrapper}>

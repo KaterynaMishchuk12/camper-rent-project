@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+}
+.camperTitle {
+  display: flex;
+}
+.showMoreBtn {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 16px 40px;
+  border-radius: 30px;
+  &:hover,
+  &:focus {
+    background-color: var(--red-hover);
+  }
+}
+.icon {
+  fill: black;
+  stroke: black;
+}

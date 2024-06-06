@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom';
-import s from './Button.module.scss';
+import clsx from 'clsx';
+import s from './Button.module.css';
 
-const Button = ({ to, children }) => {
+const buildLinkClass = (classname) => {
+  return clsx(s.button, classname && classname);
+};
+
+const Button = ({ children, classname, ...props }) => {
   return (
-    <Link className={s.link} to={to}>
+    <button className={buildLinkClass(classname)} {...props}>
       {children}
-    </Link>
+    </button>
   );
 };
 export default Button;

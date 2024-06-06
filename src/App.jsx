@@ -8,8 +8,8 @@ function App() {
     <>
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="blog" element={<CataloguePage />} />
-        <Route path="blog/:blogId" element={<FavouriteAdPage />} />
+        <Route path="catalogue" element={<CataloguePage />} />
+        <Route path="catalogue/:blogId" element={<FavouriteAdPage />} />
 
         <Route path="*" element={<Navigate to={'/'} />} />
       </Routes>

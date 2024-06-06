@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
+import './shared/styles/index.css';
 import 'modern-normalize';
 import { BrowserRouter } from 'react-router-dom';
 

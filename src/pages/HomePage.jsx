@@ -1,9 +1,9 @@
-import Header from '../modules/Header/Header';
+import Welcome from '../components/Welcome/Welcome';
 
 const HomePage = () => {
   return (
     <>
-      <Header />
+      <Welcome />
     </>
   );
 };

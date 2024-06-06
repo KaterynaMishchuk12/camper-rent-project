@@ -1,13 +1,15 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { MainPage, BlogListPage, BlogPage } from './pages';
+import HomePage from './pages/HomePage';
+import CataloguePage from 'pages/CataloguePage';
+import FavouriteAdPage from 'pages/FavouriteAdPage';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route index element={<MainPage />} />
-        <Route path="blog" element={<BlogListPage />} />
-        <Route path="blog/:blogId" element={<BlogPage />} />
+        <Route index element={<HomePage />} />
+        <Route path="blog" element={<CataloguePage />} />
+        <Route path="blog/:blogId" element={<FavouriteAdPage />} />
 
         <Route path="*" element={<Navigate to={'/'} />} />
       </Routes>

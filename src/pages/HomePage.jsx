@@ -1,6 +1,6 @@
 import Header from '../modules/Header/Header';
 
-const MainPage = () => {
+const HomePage = () => {
   return (
     <>
       <Header />
@@ -8,4 +8,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default HomePage;

@@ -1,20 +1,70 @@
 .container {
   display: flex;
 }
-.camperTitle {
+.photo {
+  border-radius: 10px;
+}
+.li {
   display: flex;
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.wrapper {
+  display: flex;
+  gap: 24px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.priceHeart {
+  display: flex;
+  gap: 6px;
+}
+.price,
+.camperName {
+  font-size: 24px;
+}
+.ratingLocation {
+  display: flex;
+  gap: 2px;
+}
+.description {
+  font-size: 16px;
+}
+.ratingLocation p {
+  margin-right: 8px;
+}
+.heartBtn {
+  color: transparent;
+  transition: transform var(--animation-duration) var(--animation-time-function);
+}
+.heartBtn:hover,
+.heartBtn:focus {
+  transform: scale(1.15);
 }
 .showMoreBtn {
   background-color: var(--red);
   color: var(--white);
   padding: 16px 40px;
   border-radius: 30px;
-  &:hover,
-  &:focus {
-    background-color: var(--red-hover);
-  }
+
+  transition: transform var(--animation-duration) var(--animation-time-function);
 }
+
+.showMoreBtn:hover,
+.showMoreBtn:focus {
+  background-color: var(--red-hover);
+  transform: scale(1.1);
+}
+
 .icon {
-  fill: black;
-  stroke: black;
+  fill: currentColor;
 }

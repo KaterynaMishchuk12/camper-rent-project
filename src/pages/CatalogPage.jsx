@@ -20,7 +20,6 @@ const CatalogPage = () => {
 
   return (
     <>
-      <h1>Catalog Page</h1>
       <Ad campers={campers} />
     </>
   );

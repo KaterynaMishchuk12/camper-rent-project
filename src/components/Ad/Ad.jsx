@@ -13,23 +13,48 @@ const Ad = ({ campers }) => {
     <div className={s.container}>
       <ul>
         {campers.map((camper) => (
-          <li key={camper._id}>
-            <div className={s.info}>
-              <img src="" alt={camper.name} width="400" height="340" />
-              <div className={s.camperTitle}>
-                <h3>{camper.name}</h3>
-                <h3>{camper.price}</h3>
-                <svg width="24" height="24" className={s.icon}>
-                  <use xlinkHref={`${sprite}#icon-map-pin`}></use>
-                </svg>
+          <li key={camper._id} className={s.li}>
+            <div className={s.wrapper}>
+              <img
+                src={camper.gallery[0]}
+                alt={camper.name}
+                width="290"
+                height="310"
+                className={s.photo}
+              />
+              <div className={s.info}>
+                <div className={s.title}>
+                  <h3 className={s.camperName}>{camper.name}</h3>
+                  <div className={s.priceHeart}>
+                    <h3 className={s.price}>{camper.price}</h3>
+                    <Button className={s.heartBtn}>
+                      <svg width="24" height="24" className={s.icon}>
+                        <use xlinkHref={`${sprite}#icon-heard`}></use>
+                      </svg>
+                    </Button>
+                  </div>
+                </div>
+                <div className={s.ratingLocation}>
+                  <svg width="16" height="16">
+                    <use xlinkHref={`${sprite}#icon-star`}></use>
+                  </svg>
+                  <span>{camper.rating}</span>
+                  <p
+                    className={s.description}
+                  >{`(${camper.reviews.length} Reviews)`}</p>
+                  <div className={s.location}>
+                    <svg width="16" height="16">
+                      <use xlinkHref={`${sprite}#icon-location`}></use>
+                    </svg>
+                    <span className={s.description}>{camper.location}</span>
+                  </div>
+                </div>
+                <p className={s.description}>
+                  {cropDescription(camper.description)}
+                </p>
+                <Button className={s.showMoreBtn}>Show More</Button>
               </div>
-              <div className={s.ratingLocation}></div>
-              <div className={s.ratingLocation}></div>
-              <p className={s.description}>
-                {cropDescription(camper.description)}
-              </p>
             </div>
-            <Button className={s.showMoreBtn}>Show More</Button>
           </li>
         ))}
       </ul>

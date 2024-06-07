@@ -1,6 +1,7 @@
-import Button from 'shared/components/Button/Button';
+import Button from '../../shared/components/Button/Button';
 import { sprite } from '../../shared/icons/index';
 import s from './Ad.module.css';
+import Features from '../Features/Features';
 
 const Ad = ({ campers }) => {
   const cropDescription = (description, maxLength = 120) => {
@@ -52,6 +53,9 @@ const Ad = ({ campers }) => {
                 <p className={s.description}>
                   {cropDescription(camper.description)}
                 </p>
+                <div className={s.features}>
+                  <Features camper={camper} />
+                </div>
                 <Button className={s.showMoreBtn}>Show More</Button>
               </div>
             </div>

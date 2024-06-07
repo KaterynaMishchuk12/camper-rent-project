@@ -23,6 +23,7 @@
 .title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 8px;
 }
 .priceHeart {
   display: flex;
@@ -35,6 +36,7 @@
 .ratingLocation {
   display: flex;
   gap: 2px;
+  margin-bottom: 24px;
 }
 .description {
   font-size: 16px;

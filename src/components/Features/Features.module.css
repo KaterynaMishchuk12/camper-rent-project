@@ -1,0 +1,9 @@
+.featuresList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featuresContainer button {
+  background-color: lightgrey;
+  padding: 8px;
+}

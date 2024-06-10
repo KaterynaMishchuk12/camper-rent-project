@@ -1,106 +1,63 @@
-import { sprite } from '../../shared/icons/index';
-import Button from '../../shared/components/Button/Button';
 import s from './Features.module.css';
+import OneFeature from '../OneFeature/OneFeature';
 
-// const Features = ({ details }) => {
-//   const features = [
-//     { id: 'airConditioner', label: 'Air Conditioner' },
-//     { id: 'wifi', label: 'Wi-Fi' },
-//     { id: 'heating', label: 'Heating' },
-//     { id: 'kitchen', label: 'Kitchen' },
-//     { id: 'bathroom', label: 'Bathroom' },
-//     { id: 'beds', label: 'Beds' },
-//     { id: 'TV', label: 'TV' },
-//     { id: 'microwave', label: 'Microwave' },
-//     { id: 'shower', label: 'Shower' },
-//     { id: 'toilet', label: 'Toilet' },
-//     { id: 'freezer', label: 'Freezer' },
-//     { id: 'hob', label: 'Hob' },
-//     { id: 'radio', label: 'Radio' },
-//     { id: 'CD', label: 'CD' },
-//     { id: 'water', label: 'Water' },
-//     { id: 'gas', label: 'Gas' },
-//   ];
-
-//   return (
-//     <div className={s.featuresContainer}>
-//       {features.map((feature) => (
-//         <Button key={feature.id} className={s.featureBtn}>
-//           {details[feature.id]
-//             ? `${feature.label}: ${details[feature.id]}`
-//             : `No ${feature.label}`}
-//         </Button>
-//       ))}
-//     </div>
-//   );
-// };
-// export default Features;
 const Features = ({ camper }) => {
+  const { adults, transmission, details } = camper;
+
+  const features = [
+    { id: 'icon-users', label: 'adults', value: adults },
+    { id: 'icon-automatic', label: '', value: transmission },
+    { id: 'icon-petrol', label: 'Petrol', value: '' },
+    details.kitchen && { id: 'icon-kitchen', label: '', value: 'Kitchen' },
+    { id: 'icon-bed', label: 'beds', value: details.beds },
+    { id: 'icon-air', label: 'AC', value: '' },
+    details.airConditioner > 0 && {
+      id: 'icon-conditioner',
+      label: 'air conditioner',
+      value: details.airConditioner,
+    },
+    details.CD > 0 && { id: 'icon-cd', label: 'CD', value: details.CD },
+    details.radio > 0 && {
+      id: 'icon-radio',
+      label: 'Radio',
+      value: details.radio,
+    },
+    details.hob > 0 && { id: 'icon-hob', label: 'hob', value: details.hob },
+    details.shower > 0 && { id: 'icon-shower', label: 'Shower', value: '' },
+    details.microwave > 0 && {
+      id: 'icon-microwave',
+      label: 'Microwave',
+      value: '',
+    },
+    details.water && { id: 'icon-water', label: 'Water', value: '' },
+    details.gas && { id: 'icon-gas', label: 'Gas', value: '' },
+    details.freezer > 0 && {
+      id: 'icon-freezer',
+      label: 'Freezer',
+      value: details.freezer,
+    },
+    details.toilet > 0 && {
+      id: 'icon-toilet',
+      label: 'Toilet',
+      value: details.toilet,
+    },
+  ].filter(Boolean);
+
   return (
     <div className={s.featuresContainer}>
       <ul className={s.featuresList}>
-        <li>
-          <Button>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-users`}></use>
-            </svg>
-            <span>{camper.adults}adults</span>
-          </Button>
-        </li>
-        <li>
-          <Button>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-automatic`}></use>
-            </svg>
-            <span>{camper.transmission}</span>
-          </Button>
-        </li>
-        <li>
-          <Button>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-petrol`}></use>
-            </svg>
-            <span>Petrol</span>
-          </Button>
-        </li>
-        <li>
-          {/* тут треба зробити умову якщо в кітчен не нал, то виводити */}
-          <Button>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-kitchen`}></use>
-            </svg>
-            <span>Kitchen</span>
-          </Button>
-        </li>
-        <li>
-          <Button>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-bed`}></use>
-            </svg>
-            <span>{camper.details.beds}beds</span>
-          </Button>
-        </li>
-        <li>
-          {/* тут треба зробити умову якщо в airCondit не null, то виводити */}
-          <Button>
-            <svg width="20" height="20">
-              <use xlinkHref={`${sprite}#icon-conditioner`}></use>
-            </svg>
-            <span>AC</span>
-          </Button>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        {features.slice(0, 6).map((feature) => (
+          <li key={feature.id}>
+            <OneFeature
+              icon={feature.id}
+              label={feature.label}
+              value={feature.value}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );
 };
+
 export default Features;

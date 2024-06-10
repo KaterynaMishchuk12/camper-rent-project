@@ -57,6 +57,8 @@
   color: var(--white);
   padding: 16px 40px;
   border-radius: 30px;
+  display: inline-block;
+  width: auto;
 
   transition: transform var(--animation-duration) var(--animation-time-function);
 }

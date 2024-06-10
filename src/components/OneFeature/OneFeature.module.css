@@ -1,0 +1,16 @@
+.container {
+  gap: 5px;
+}
+
+.featureBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--dark-white);
+  color: var(--dark);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 18px;
+  cursor: default;
+  font-size: 16px;
+}

@@ -30,7 +30,7 @@ const Ad = ({ campers }) => {
                     <h3 className={s.price}>{camper.price}</h3>
                     <Button className={s.heartBtn}>
                       <svg width="24" height="24" className={s.icon}>
-                        <use xlinkHref={`${sprite}#icon-heard`}></use>
+                        <use xlinkHref={`${sprite}#icon-heart`}></use>
                       </svg>
                     </Button>
                   </div>

@@ -16,13 +16,15 @@ const Ad = ({ campers }) => {
         {campers.map((camper) => (
           <li key={camper._id} className={s.li}>
             <div className={s.wrapper}>
-              <img
-                src={camper.gallery[0]}
-                alt={camper.name}
-                width="290"
-                height="310"
-                className={s.photo}
-              />
+              <div className={s.photoWrap}>
+                <img
+                  src={camper.gallery[0]}
+                  alt={camper.name}
+                  // width="290"
+                  // height="310"
+                  className={s.photo}
+                />
+              </div>
               <div className={s.info}>
                 <div className={s.title}>
                   <h3 className={s.camperName}>{camper.name}</h3>

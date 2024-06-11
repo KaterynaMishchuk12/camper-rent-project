@@ -67,7 +67,7 @@ const CatalogPage = () => {
   console.log('Total Pages:', totalPages);
   console.log('Show Load More Button:', showLoadMoreBtn);
   return (
-    <div style={{ display: 'flex', gap: '10px', padding: '60px 40px' }}>
+    <div style={{ display: 'flex', padding: '100px 64px' }}>
       <SideBar>
         <LoacationForm />
         <EquipmentFilter />

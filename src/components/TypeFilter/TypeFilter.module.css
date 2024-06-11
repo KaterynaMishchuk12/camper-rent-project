@@ -11,3 +11,6 @@
   row-gap: 8px;
   padding-top: 32px;
 }
+.fullyInt {
+  display: flex;
+}

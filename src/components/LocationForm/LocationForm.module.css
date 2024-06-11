@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.location {
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+.input {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  border: none;
+}

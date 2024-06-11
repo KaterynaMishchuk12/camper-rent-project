@@ -12,6 +12,10 @@ import {
   setCampers as setCampersAction,
   loadMoreCampers,
 } from '../redux/campersSlice';
+import SideBar from '../shared/components/SideBar/SideBar';
+import LoacationForm from '../components/LocationForm/LocationForm';
+import EquipmentFilter from '../components/EquipmentFilter/EquipmentFilter';
+import TypeFilter from '../components/TypeFilter/TypeFilter';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -63,10 +67,17 @@ const CatalogPage = () => {
   console.log('Total Pages:', totalPages);
   console.log('Show Load More Button:', showLoadMoreBtn);
   return (
-    <>
-      <Ad campers={displayedCampers} />
-      {showLoadMoreBtn && <LoadMoreBtn onClick={loadMore} />}
-    </>
+    <div style={{ display: 'flex', gap: '10px', padding: '60px 40px' }}>
+      <SideBar>
+        <LoacationForm />
+        <EquipmentFilter />
+        <TypeFilter />
+      </SideBar>
+      <div>
+        <Ad campers={displayedCampers} />
+        {showLoadMoreBtn && <LoadMoreBtn onClick={loadMore} />}
+      </div>
+    </div>
   );
 };
 

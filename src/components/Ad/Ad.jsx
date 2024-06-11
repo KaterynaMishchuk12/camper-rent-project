@@ -53,10 +53,12 @@ const Ad = ({ campers }) => {
                 <p className={s.description}>
                   {cropDescription(camper.description)}
                 </p>
-                <div className={s.features}>
-                  <Features camper={camper} />
+                <div className={s.featuresWrap}>
+                  <div className={s.features}>
+                    <Features camper={camper} />
+                  </div>
+                  <Button className={s.showMoreBtn}>Show More</Button>
                 </div>
-                <Button className={s.showMoreBtn}>Show More</Button>
               </div>
             </div>
           </li>

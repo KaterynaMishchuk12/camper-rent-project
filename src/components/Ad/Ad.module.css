@@ -19,11 +19,11 @@
 .info {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 .title {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
 }
 .priceHeart {
   display: flex;
@@ -36,7 +36,6 @@
 .ratingLocation {
   display: flex;
   gap: 2px;
-  margin-bottom: 24px;
 }
 .description {
   font-size: 16px;
@@ -52,14 +51,22 @@
 .heartBtn:focus {
   transform: scale(1.15);
 }
+.featuresWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+}
 .showMoreBtn {
   background-color: var(--red);
   color: var(--white);
   padding: 16px 40px;
   border-radius: 30px;
-  display: inline-block;
-  width: auto;
-
+  width: 200px;
+  font-size: 16px;
   transition: transform var(--animation-duration) var(--animation-time-function);
 }
 

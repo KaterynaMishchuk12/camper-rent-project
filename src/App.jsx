@@ -1,18 +1,22 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import CatalogPage from './pages/CatalogPage';
-import FavouriteAdPage from 'pages/FavouriteAdPage';
+import { lazy, Suspense } from 'react';
+
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CatalogPage = lazy(() => import('./pages/CatalogPage'));
+const FavouriteAdPage = lazy(() => import('./pages/FavouriteAdPage'));
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="catalog" element={<CatalogPage />} />
-        <Route path="favorite" element={<FavouriteAdPage />} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="catalog" element={<CatalogPage />} />
+          <Route path="favorite" element={<FavouriteAdPage />} />
 
-        <Route path="*" element={<Navigate to={'/'} />} />
-      </Routes>
+          <Route path="*" element={<Navigate to={'/'} />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }

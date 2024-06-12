@@ -39,6 +39,9 @@
   display: flex;
   gap: 6px;
 }
+.rating {
+  text-decoration: underline;
+}
 .price,
 .camperName {
   font-size: 24px;

@@ -36,9 +36,7 @@
   display: flex;
   gap: 2px;
 }
-/* .description {
-  font-size: 16px;
-} */
+
 .ratingLocation p {
   margin-right: 8px;
 }

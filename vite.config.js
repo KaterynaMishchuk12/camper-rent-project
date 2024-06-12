@@ -15,5 +15,5 @@ export default defineConfig({
       services: '/src/services',
     },
   },
-  base: '/',
+  base: '/camper-rent-project',
 });

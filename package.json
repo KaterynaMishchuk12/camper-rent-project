@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://KaterynaMishchuk12github.io/camper-rent-project",
+  "homepage": "https://KaterynaMishchuk12.github.io/camper-rent-project",
   "scripts": {
     "start": "vite --port 3000",
     "build": "vite build",

@@ -49,23 +49,9 @@ const CatalogPage = () => {
   const showLoadMoreBtn = campers.length > 0 && currentPage < totalPages;
 
   const loadMore = () => {
-    console.log('Load More Clicked');
     dispatch(loadMoreCampers());
   };
 
-  // ************
-  useEffect(() => {
-    console.log('Campers fetched:', campers);
-  }, [campers]);
-
-  useEffect(() => {
-    console.log('Displayed campers updated:', displayedCampers);
-  }, [displayedCampers]);
-  // **************************
-
-  console.log('Current Page:', currentPage);
-  console.log('Total Pages:', totalPages);
-  console.log('Show Load More Button:', showLoadMoreBtn);
   return (
     <div style={{ display: 'flex', padding: '100px 64px' }}>
       <SideBar>

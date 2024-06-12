@@ -1,7 +1,7 @@
 const FavouriteAdPage = () => {
   return (
     <>
-      <h1>FavouriteAd Page</h1>
+      <h1>FavouriteAd Page is still being developed</h1>
     </>
   );
 };

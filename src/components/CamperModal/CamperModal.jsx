@@ -1,6 +1,8 @@
 import { Modal } from '../../shared/components/Modal/Modal';
 import AdModal from '../AdModal/AdModal';
 import { sprite } from '../../shared/icons';
+import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 import s from './CamperModal.module.css';
 
@@ -14,6 +16,14 @@ const CamperModal = ({ active, setActive, camper }) => {
           </svg>
         </button>
         <AdModal camper={camper} />
+        <div>
+          <Link to={`features`}>Features</Link>
+          <Link to={`reviews`}>Reviews</Link>
+        </div>
+
+        <Suspense fallback={<b>Loading data...</b>}>
+          <Outlet />
+        </Suspense>
       </Modal>
     </div>
   );
